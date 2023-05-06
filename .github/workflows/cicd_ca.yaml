@@ -30,8 +30,8 @@ jobs:
       - name: Send my information
         id: slack
         uses: slackapi/slack-github-action@v1.23.0
-        with:
-				payload: |
+				with:
+					payload: |
             {
               "blocks": [
                 {
