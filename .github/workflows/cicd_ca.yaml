@@ -15,7 +15,7 @@ jobs:
  		- name: Setup nodejs
       uses: actions/setup-node@v3
       with:
-        node-version: '17'
+        node-version: '16'
 
     - name: Checkout source
       uses: actions/checkout@v3
@@ -44,7 +44,7 @@ jobs:
 											"type": "section",
 											"text": {
 												"type": "mrkdwn",
-												"text": "*Name:* Xu Ziyissss                                   *Email*:E1112891@u.nus.edu"
+												"text": "*Name:* Xu Ziyisssszz                                   *Email*:E1112891@u.nus.edu"
 											}
 										},
 										{
