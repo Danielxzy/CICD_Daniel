@@ -32,29 +32,36 @@ jobs:
         with:
           payload: |
             {
-              "blocks": [
-                {
-                  "type": "section",
-                  "text": {
-                    "type": "mrkdwn",
-                    "text": "*DipSA 56 CICD Submission*"
-                  }
-                },
-                {
-                  "type": "section",
-                  "text": {
-                    "type": "mrkdwn",
-                    "text": "*Name:* Xu Ziyi                       *Email*:E1112891@u.nus.edu"
-                  }
-                },
-                {
-                  "type": "section",
-                  "text": {
-                    "type": "mrkdwn",
-                    "text": "*Matriculation:* A0269508R               *Repository*:https://github.com/Danielxzy/CICD-Project"
-                  }
-                },
-                {
+             		   "blocks": [
+											{
+												"type": "section",
+												"text": {
+													"type": "mrkdwn",
+													"text": "*DipSA 56 CICD Submission*"
+												}
+											},
+											{
+												"type":"section",
+                        "fields":[
+                      {
+													"type": "mrkdwn",
+													"text": "*Name:* Xu Ziyi                                  
+                      },
+                      {
+                           "type":"mrkdwn"
+                           "text":*Email*:E1112891@u.nus.edu"
+												
+											},
+											{
+												
+													"type": "mrkdwn",
+													"text": "*Matriculation:* A0269508R              
+                      },
+                      {    "type": "mrkdwn",
+                           "text": "*Repository*:"\n ${{ github.server_url }}/${{ github.repository }}"
+												
+											},
+                  {
                   "type": "section",
                   "text": {
                     "type": "mrkdwn",
