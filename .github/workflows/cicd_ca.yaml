@@ -31,7 +31,57 @@ jobs:
         id: slack
         uses: slackapi/slack-github-action@v1.23.0
         with:
-					payload:
+				payload: |
+            {
+              "blocks": [
+                {
+                  "type": "header",
+                  "text": {
+                    "type": "mrkdwn",
+                    "text": "*DipSA 56 CICD Submission*"
+                  }
+                },
+                {
+                  "type": "section",
+                  "fields": [
+                    {
+                      "type": "mrkdwn",
+                      "text": "*Name:* Xu Ziyi"                                  
+                    },
+                    {
+                      "type": "mrkdwn",
+                      "text": "*Email:* E1112891@u.nus.edu"
+                    },
+                    {
+                      "type": "mrkdwn",
+                      "text": "*Matriculation:* A0269508R"              
+                    },
+                    {
+                      "type": "mrkdwn",
+                      "text": "*Repository:* ${{ github.server_url }}/${{ github.repository }}"
+                    }
+                  ]
+                }
+                {
+                  "type": "section",
+                  "text": {
+                    "type": "mrkdwn",
+                    "text": "${{ secrets.RAILWAY_URL }}"
+                  },
+                  "accessory": {
+                    "type": "button",
+                    "text": {
+                      "type": "plain_text",
+                      "text": "Go",
+                      "emoji": true
+                    },
+                    "value": "click_me_123",
+                    "url": "${{ secrets.RAILWAY_URL }}",
+                    "action_id": "button-action"
+                  }
+                }
+              ]
+            }
 			env:
 				SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
 				SLACK_WEBHOOK_TYPE: INCOMING_WEBHOOK
