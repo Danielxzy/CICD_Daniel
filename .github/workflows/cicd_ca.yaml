@@ -27,10 +27,10 @@ jobs:
           service: "CICD_Daniel"
 
       - name: Send my Info
-	id: slack
-	uses: slackapi/slack-github-action@v1.23.0
-	with:
-	  payload: |
+        id: slack
+        uses: slackapi/slack-github-action@v1.23.0
+        with:
+          payload: |
             {
               "blocks": [
               {
@@ -80,7 +80,7 @@ jobs:
                   }
                 }
               ]	
-           }			
-	env:
-	  SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+            }		
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
           SLACK_WEBHOOK_TYPE: INCOMING_WEBHOOK
