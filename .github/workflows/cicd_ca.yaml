@@ -12,7 +12,7 @@ jobs:
 
     steps:
 
- -    name: Setup nodejs
+ 		- name: Setup nodejs
       uses: actions/setup-node@v3
       with:
         node-version: '17'
@@ -31,49 +31,49 @@ jobs:
       uses: slackapi/slack-github-action@v1.23.0
       with:
          payload: |
-      {
-	"blocks": [
-		{
-			"type": "section",
-			"text": {
-				"type": "mrkdwn",
-				"text": "*DipSA 56 CICD Submission*"
-			}
-		},
-		{
-			"type": "section",
-			"text": {
-				"type": "mrkdwn",
-				"text": "*Name:* Xu Ziyi test                                    *Email*:E1112891@u.nus.edu"
-			}
-		},
-		{
-			"type": "section",
-			"text": {
-				"type": "mrkdwn",
-				"text": "*Metriculation:* A0269508R               *Repository*:https://github.com/Danielxzy/CICD-Project"
-			}
-		},
-		{
-			"type": "section",
-			"text": {
-				"type": "mrkdwn",
-				"text": "${{ secrets.RAILWAY_URL }}"
-			},
-			"accessory": {
-				"type": "button",
-				"text": {
-					"type": "plain_text",
-					"text": "Go",
-					"emoji": true
-				},
-				"value": "click_me_123",
-				"url": "${{ secrets.RAILWAY_URL }}",
-				"action_id": "button-action"
-			}
-		}
-	]
-}
+											{
+									"blocks": [
+										{
+											"type": "section",
+											"text": {
+												"type": "mrkdwn",
+												"text": "*DipSA 56 CICD Submission*"
+											}
+										},
+										{
+											"type": "section",
+											"text": {
+												"type": "mrkdwn",
+												"text": "*Name:* Xu Ziyissss                                   *Email*:E1112891@u.nus.edu"
+											}
+										},
+										{
+											"type": "section",
+											"text": {
+												"type": "mrkdwn",
+												"text": "*Matriculation:* A0269508R               *Repository*:https://github.com/Danielxzy/CICD-Project"
+											}
+										},
+										{
+											"type": "section",
+											"text": {
+												"type": "mrkdwn",
+												"text": "${{ secrets.RAILWAY_URL }}"
+											},
+											"accessory": {
+												"type": "button",
+												"text": {
+													"type": "plain_text",
+													"text": "Go",
+													"emoji": true
+												},
+												"value": "click_me_123",
+												"url": "${{ secrets.RAILWAY_URL }}",
+												"action_id": "button-action"
+											}
+										}
+									]
+								}
       env:
         SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
         SLACK_WEBHOOK_TYPE: INCOMING_WEBHOOK
