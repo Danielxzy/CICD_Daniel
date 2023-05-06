@@ -26,13 +26,13 @@ jobs:
         with:
           railway_token: ${{ secrets.RAILWAY_TOKEN }}
           service: "CICD_Daniel"
-
-      - name: Send my information
-        id: slack
-        uses: slackapi/slack-github-action@v1.23.0
-				with:
+			
+			- name: Send my information
+				id: slack
+				uses: slackapi/slack-github-action@v1.23.0
+				with: 
 					payload: |
-            {
+						{
               "blocks": [
                 {
                   "type": "header",
@@ -82,6 +82,7 @@ jobs:
                 }
               ]
             }
+      
 			env:
 				SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
 				SLACK_WEBHOOK_TYPE: INCOMING_WEBHOOK
