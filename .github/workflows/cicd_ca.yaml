@@ -24,7 +24,7 @@ jobs:
       uses: bervProject/railway-deploy@main
       with:
         railway_token: ${{ secrets.RAILWAY_TOKEN }}
-        service: "CICD-Project"
+        service: "CICD-Daniel"
 
     - name: Send my information
       id: slack
