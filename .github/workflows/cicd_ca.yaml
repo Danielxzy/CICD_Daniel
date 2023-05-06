@@ -25,6 +25,7 @@ jobs:
         with:
           railway_token: ${{ secrets.RAILWAY_TOKEN }}
           service: "CICD_Daniel"
+
 			- name: Send my Info
 				id: slack
 				uses: slackapi/slack-github-action@v1.23.0
