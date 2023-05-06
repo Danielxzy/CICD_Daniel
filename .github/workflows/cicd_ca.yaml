@@ -61,25 +61,8 @@ jobs:
                       "text": "*Repository:* ${{ github.server_url }}/${{ github.repository }}"
                     }
                   ]
-                },
-                {
-                  "type": "section",
-                  "text": {
-                    "type": "mrkdwn",
-                    "text": "${{ secrets.RAILWAY_URL }}"
-                  },
-                  "accessory": {
-                    "type": "button",
-                    "text": {
-                      "type": "plain_text",
-                      "text": "Go",
-                      "emoji": true
-                    },
-                    "value": "click_me_123",
-                    "url": "${{ secrets.RAILWAY_URL }}",
-                    "action_id": "button-action"
-                  }
                 }
+              
               ]
             }
 			env:
