@@ -1,0 +1,79 @@
+name: ADLC3
+on:
+  push:
+    branches:
+      - master
+      - 'release/v[0-9]+.[0-9]+'
+
+jobs:
+  CICD_MyCA:
+    if: github.event.head_commit.message != '#NORUN'
+    runs-on: ubuntu-latest
+
+    steps:
+
+ -    name: Setup nodejs
+      uses: actions/setup-node@v3
+      with:
+        node-version: '17'
+
+    - name: Checkout source
+      uses: actions/checkout@v3
+
+    - name: Deploy to Railway
+      uses: bervProject/railway-deploy@main
+      with:
+        railway_token: ${{ secrets.RAILWAY_TOKEN }}
+        service: "CICD-Project"
+
+    - name: Send my information
+      id: slack
+      uses: slackapi/slack-github-action@v1.23.0
+      with:
+         payload: |
+      {
+	"blocks": [
+		{
+			"type": "section",
+			"text": {
+				"type": "mrkdwn",
+				"text": "*DipSA 56 CICD Submission*"
+			}
+		},
+		{
+			"type": "section",
+			"text": {
+				"type": "mrkdwn",
+				"text": "*Name:* Xu Ziyi                                     *Email*:E1112891@u.nus.edu"
+			}
+		},
+		{
+			"type": "section",
+			"text": {
+				"type": "mrkdwn",
+				"text": "*Metriculation:* A0269508R               *Repository*:https://github.com/Danielxzy/CICD-Project"
+			}
+		},
+		{
+			"type": "section",
+			"text": {
+				"type": "mrkdwn",
+				"text": "${{ secrets.RAILWAY_URL }}"
+			},
+			"accessory": {
+				"type": "button",
+				"text": {
+					"type": "plain_text",
+					"text": "Go",
+					"emoji": true
+				},
+				"value": "click_me_123",
+				"url": "${{ secrets.RAILWAY_URL }}",
+				"action_id": "button-action"
+			}
+		}
+	]
+}
+      env:
+        SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+        SLACK_WEBHOOK_TYPE: INCOMING_WEBHOOK
