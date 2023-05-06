@@ -44,7 +44,7 @@ jobs:
 			"type": "section",
 			"text": {
 				"type": "mrkdwn",
-				"text": "*Name:* Xu Ziyi                                     *Email*:E1112891@u.nus.edu"
+				"text": "*Name:* Xu Ziyi test                                    *Email*:E1112891@u.nus.edu"
 			}
 		},
 		{
